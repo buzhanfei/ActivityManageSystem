@@ -32,7 +32,6 @@ public class PageController {
 		JsonResult jsonResult = acService.findObjectById(id);
 		model.addAttribute("idObject", jsonResult);
 		return "update_edit";
-		
 	}
 	
 }
