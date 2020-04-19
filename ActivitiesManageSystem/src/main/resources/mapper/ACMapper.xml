@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ac.mapper.ACMapper">
+	<select id="findObject" resultType="com.ac.entity.Activity">
+		select * from acsys order by start_time;
+	</select>
+	
+	<delete id="deleteObject">
+		delete from acsys where id=#{id};
+	</delete>
+	
+	<insert id="addObject">
+		insert into acsys 
+		values(null,#{type},#{startTime},#{duration},#{locus},#{num},#{remark});
+	</insert>
+	
+	<update id="updateObject">
+		update acsys set 
+		duration=#{duration},num=#{num},remark=#{remark} where id=#{id};
+	</update>
+	
+	<select id="findObjectById" resultType="com.ac.entity.Activity">
+		select * from acsys where id=#{id};
+	</select>
+</mapper>
